@@ -1,0 +1,17 @@
+[package]
+name = "docval"
+version = "0.1.0"
+authors = ["Alberto Cavalcante <alberto@cavalcante.uk>"]
+edition = "2021"
+
+[dependencies]
+validator = { version = "0.18.1", features = ["derive"], optional = true }
+
+[features]
+default = []
+validator-integration = ["validator"]
+
+[[example]]
+name = "brazil_tax_id_validator"
+path = "examples/validator/brazil_tax_id.rs"
+required-features = ["validator-integration"]
